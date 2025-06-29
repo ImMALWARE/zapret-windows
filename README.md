@@ -1,12 +1,35 @@
-# Сборка https://github.com/bol-van/zapret
+# Сборка https://github.com/bol-van/zapret для Windows
 
-1. Скачиваем архив: https://github.com/ImMALWARE/zapret-windows-build/releases/download/7/zapret.zip
+1. Скачиваем архив: https://github.com/ImMALWARE/zapret-windows/releases/download/8/zapret.zip
 2. Распаковываем в какую-нибудь папку (например, C:\zapret)
 
-**start_now.cmd** — запустить в окне, блокировки будут обходиться пока открыто окно с zapret
+**start_now.cmd** — запустить в окне, блокировки будут обходиться пока открыта командная строка
 
-**create_service.cmd** — создать службу, zapret будет запущен без окна
+**start_stop_service.cmd** — создать или удалить службу. При создании службы, zapret будет запущен без окна и будет автоматически запускаться при запуске Windows.
 
-**delete_service.cmd** — удалить службу, остановить службу с zapret
+**autohosts.txt** — список доменов заблокированных сайтов. Обязательно должна быть пустая строка в конце файла.
 
-**kill.cmd** — на случай, если что-то пошло не так, если папка не удаляется и т.д.
+**check.cmd** — проверить доступ к сайтам из autohosts.txt.
+
+**ignore.txt** — список доменов незаблокированных сайтов. Если не работает незаблокированный сайт, добавьте его домен сюда.
+
+**cofig.txt** — конфиг winws. Вместо путей к файлам используйте {переменные}.
+
+## Переменные в config.txt
+
+{hosts} — подставит путь к autohosts.txt
+
+{youtube} — подставить путь к youtube.txt
+
+{quicgoogle} — подставит путь к system\quic_initial_www_google_com.bin
+
+{tlsgoogle} — подставит путь к system\tls_clienthello_www_google_com.bin
+
+## Как использовать на Windows 7?
+Чтобы zapret работал на Windows 7, необходимо отключить проверку подписи драйверов. Для этого выполните команды в командной строке от имени администратора и перезагрузите систему:
+
+```
+bcdedit.exe -set loadoptions DISABLE_INTEGRITY_CHECKS
+bcdedit.exe -set TESTSIGNING ON
+```
+После перезагрузки, zapret должен работать корректно.

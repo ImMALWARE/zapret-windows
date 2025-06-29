@@ -1,0 +1,5 @@
+ --wf-tcp=80,443 --wf-udp=443,50000-50100
+--filter-udp=443 --hostlist={hosts} --dpi-desync=fake --dpi-desync-repeats=6 --dpi-desync-fake-quic={quicgoogle} --new 
+--filter-udp=50000-50100 --filter-l7=discord,stun --dpi-desync=fake --dpi-desync-repeats=6 --new 
+--filter-tcp=80 --hostlist={hosts} --dpi-desync=fake,split2 --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --new 
+--filter-tcp=443 --hostlist={hosts} --dpi-desync=split2 --dpi-desync-split-seqovl=652 --dpi-desync-split-pos=2 --dpi-desync-split-seqovl-pattern={tlsgoogle}
