@@ -17,13 +17,15 @@
 
 ## Переменные в config.txt
 
-{hosts} — подставит путь к autohosts.txt
+`{hosts}` — подставит путь к autohosts.txt
 
-{youtube} — подставить путь к youtube.txt
+`{ignore}` — подставит путь к ignore.txt
 
-{quicgoogle} — подставит путь к system\quic_initial_www_google_com.bin
+`{youtube}` — подставить путь к youtube.txt
 
-{tlsgoogle} — подставит путь к system\tls_clienthello_www_google_com.bin
+`{quicgoogle}` — подставит путь к system\quic_initial_www_google_com.bin
+
+`{tlsgoogle}` — подставит путь к system\tls_clienthello_www_google_com.bin
 
 ## Как использовать на Windows 7?
 Чтобы zapret работал на Windows 7, необходимо отключить проверку подписи драйверов. Для этого выполните команды в командной строке от имени администратора и перезагрузите систему:

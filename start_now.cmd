@@ -4,6 +4,7 @@ cd /d "%~dp0"
 setlocal enabledelayedexpansion
 
 set "autohosts="%~dp0autohosts.txt""
+set "ignore="%~dp0ignore.txt""
 set "youtube="%~dp0youtube.txt""
 set "quicgoogle="%~dp0system\quic_initial_www_google_com.bin""
 set "tlsgoogle="%~dp0system\tls_clienthello_www_google_com.bin""
@@ -13,6 +14,7 @@ set "args="
 for /f "usebackq delims=" %%A in ("config.txt") do (
     set "line=%%A"
     set "line=!line:{hosts}=%autohosts%!"
+    set "line=!line:{ignore}=%ignore%!"
     set "line=!line:{youtube}=%youtube%!"
     set "line=!line:{quicgoogle}=%quicgoogle%!"
     set "line=!line:{tlsgoogle}=%tlsgoogle%!"
