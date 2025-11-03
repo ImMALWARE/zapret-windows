@@ -1,5 +1,17 @@
 @echo off
 chcp 65001 >nul
+cd /d "%~dp0"
+IF NOT EXIST "system\" (
+    echo Распакуйте архив!
+    pause
+    exit /b
+)
+sc query bfe | find "RUNNING" >nul
+if errorlevel 1 (
+    echo Служба BFE не запущена! Откройте "Службы" и запустите "Служба базовой фильтрации"!
+    pause
+    exit
+)
 setlocal DisableDelayedExpansion
 set "batchPath=%~dpnx0"
 for %%k in (%0) do set "batchName=%%~nk"

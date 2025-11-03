@@ -1,7 +1,19 @@
 @echo off
 chcp 65001 >nul
 cd /d "%~dp0"
+IF NOT EXIST "system\" (
+    echo Распакуйте архив!
+    pause
+    exit /b
+)
 setlocal enabledelayedexpansion
+
+sc query bfe | find "RUNNING" >nul
+if errorlevel 1 (
+    echo Служба BFE не запущена! Откройте "Службы" и запустите "Служба базовой фильтрации"!
+    pause
+    exit
+)
 
 set "autohosts="%~dp0autohosts.txt""
 set "ignore="%~dp0ignore.txt""
