@@ -3,12 +3,14 @@ chcp 65001 >nul
 cd /d "%~dp0"
 IF NOT EXIST "system\" (
     echo Распакуйте архив!
+    echo Unpack the archive!
     pause
     exit /b
 )
 sc query bfe | find "RUNNING" >nul
 if errorlevel 1 (
     echo Служба BFE не запущена! Откройте "Службы" и запустите "Служба базовой фильтрации"!
+    echo BFE service is not running! Open "Services" and start "Base Filtering Engine"!
     pause
     exit
 )
@@ -54,6 +56,8 @@ IF %ERRORLEVEL% EQU 0 (
     echo .
     echo Служба zapret удалена. Вы можете закрыть эту командную строку.
     echo Для запуска службы запустите этот же файл.
+    echo The zapret service has been removed. You can close this command prompt.
+    echo To start the service, run this same file.
     pause > nul
     exit
 )
@@ -83,4 +87,6 @@ sc start "ZapretService"
 echo .
 echo zapret запущен в фоне. Вы можете закрыть эту командную строку.
 echo Для остановки службы запустите этот же файл.
+echo zapret is running in the background. You can close this command prompt.
+echo To stop the service, run this same file.
 pause > nul
