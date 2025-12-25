@@ -10,7 +10,9 @@
 
 **autohosts.txt** — A list of domains for blocked sites. There must be an empty line at the end of the file.
 
-**check.cmd** — Checks access to the sites listed in autohosts.txt.
+**ipset.txt** — A list of blocked IP-addresses and CIDR.
+
+**check.cmd** — Checks access to the sites listed in `autohosts.txt`.
 
 **ignore.txt** — A list of domains for unblocked sites. If an unblocked site isn't working, add its domain here.
 
@@ -18,15 +20,17 @@
 
 ## Variables in config.txt
 
-`{hosts}` — Substitutes the path to autohosts.txt
+`{hosts}` — Substitutes the path to `autohosts.txt`.
 
-`{ignore}` — Substitutes the path to ignore.txt
+`{ipset}` — Substitutes the path to `ipset.txt`.
 
-`{youtube}` — Substitutes the path to youtube.txt
+`{ignore}` — Substitutes the path to `ignore.txt`.
 
-`{quicgoogle}` — Substitutes the path to system\quic_initial_www_google_com.bin
+`{youtube}` — Substitutes the path to `youtube.txt`.
 
-`{tlsgoogle}` — Substitutes the path to system\tls_clienthello_www_google_com.bin
+`{quicgoogle}` — Substitutes the path to `system\quic_initial_www_google_com.bin`.
+
+`{tlsgoogle}` — Substitutes the path to `system\tls_clienthello_www_google_com.bin`.
 
 ## How to use on Windows 7?
 To make zapret work on Windows 7, you need to disable driver signature verification. To do this, [run the following commands in a command prompt as an administrator](https://wiki.malw.link/windows/run) and then reboot your system:

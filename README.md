@@ -10,7 +10,9 @@
 
 **autohosts.txt** — список доменов заблокированных сайтов. Обязательно должна быть пустая строка в конце файла.
 
-**check.cmd** — проверить доступ к сайтам из autohosts.txt.
+**ipset.txt** — список доменов заблокированных IP-адресов и CIDR.
+
+**check.cmd** — проверить доступ к сайтам из `autohosts.txt`.
 
 **ignore.txt** — список доменов незаблокированных сайтов. Если не работает незаблокированный сайт, добавьте его домен сюда.
 
@@ -18,15 +20,17 @@
 
 ## Переменные в config.txt
 
-`{hosts}` — подставит путь к autohosts.txt
+`{hosts}` — подставит путь к `autohosts.txt`.
 
-`{ignore}` — подставит путь к ignore.txt
+`{ipset}` — подставит путь к `ipset.txt`.
 
-`{youtube}` — подставить путь к youtube.txt
+`{ignore}` — подставит путь к `ignore.txt`.
 
-`{quicgoogle}` — подставит путь к system\quic_initial_www_google_com.bin
+`{youtube}` — подставить путь к `youtube.txt`.
 
-`{tlsgoogle}` — подставит путь к system\tls_clienthello_www_google_com.bin
+`{quicgoogle}` — подставит путь к `system\quic_initial_www_google_com.bin`.
+
+`{tlsgoogle}` — подставит путь к `system\tls_clienthello_www_google_com.bin`.
 
 ## Как использовать на Windows 7?
 Чтобы zapret работал на Windows 7, необходимо отключить проверку подписи драйверов. Для этого [выполните команды в командной строке от имени администратора](https://wiki.malw.link/windows/run) и перезагрузите систему:

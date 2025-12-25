@@ -63,6 +63,7 @@ IF %ERRORLEVEL% EQU 0 (
 )
 
 set "autohosts="%~dp0autohosts.txt""
+set "ipset="%~dp0ipset.txt""
 set "ignore="%~dp0ignore.txt""
 set "youtube="%~dp0youtube.txt""
 set "quicgoogle="%~dp0system\quic_initial_www_google_com.bin""
@@ -73,6 +74,7 @@ set "args="
 for /f "usebackq delims=" %%A in ("config.txt") do (
     set "line=%%A"
     set "line=!line:{hosts}=%autohosts%!"
+    set "line=!line:{ipset}=%ipset%!"
     set "line=!line:{ignore}=%ignore%!"
     set "line=!line:{youtube}=%youtube%!"
     set "line=!line:{quicgoogle}=%quicgoogle%!"
