@@ -16,7 +16,7 @@ jobs:
 
       - name: Create archive
         run: |
-          zip -r zapret.zip system autohosts.txt check.cmd config.txt ignore.txt start_now.cmd start_stop_service.cmd youtube.txt
+          zip -r zapret.zip system autohosts.txt check.cmd config.txt ipset.txt ignore.txt start_now.cmd start_stop_service.cmd youtube.txt
 
       - name: Get latest release tag
         id: get_latest_tag
