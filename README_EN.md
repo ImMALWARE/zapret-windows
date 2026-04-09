@@ -12,6 +12,8 @@
 
 **ipset.txt** — A list of blocked IP-addresses and CIDR.
 
+**whitelist.txt** — A list of domains in the whitelist. Requests to servers like Cloudflare, Hetzner, OVH, etc., with these domains will pass correctly. Do not confuse this with the mobile internet whitelist.
+
 **check.cmd** — Checks access to the sites listed in `autohosts.txt`.
 
 **ignore.txt** — A list of domains for unblocked sites. If an unblocked site isn't working, add its domain here.
